@@ -12,6 +12,9 @@ import android.support.v13.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 //import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Explode;
+import android.transition.Slide;
+import android.transition.Transition;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +23,8 @@ import android.view.WindowInsets;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.ItemsContract;
+
+import static android.os.Build.VERSION.SDK_INT;
 
 /**
  * An activity representing a single Article detail screen, letting you swipe between articles.
@@ -105,6 +110,15 @@ public class ArticleDetailActivity extends AppCompatActivity
                 mStartId = ItemsContract.Items.getItemId(getIntent().getData());
                 mSelectedItemId = mStartId;
             }
+        }
+
+        if (SDK_INT >= 21) {
+            Transition enterTans = new Slide();
+            getWindow().setEnterTransition(enterTans);
+
+            Transition exitTrans = new Explode();
+            getWindow().setExitTransition(exitTrans);
+            getWindow().setReturnTransition(exitTrans);
         }
     }
 

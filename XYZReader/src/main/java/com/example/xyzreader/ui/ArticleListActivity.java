@@ -87,6 +87,10 @@ public class ArticleListActivity extends AppCompatActivity implements
         if (SDK_INT >= 21) {
             Transition exitTrans = new Slide();
             getWindow().setExitTransition(exitTrans);
+
+            Transition enterTransition = new Fade();
+            getWindow().setEnterTransition(enterTransition);
+            getWindow().setReturnTransition(enterTransition);
         }
     }
 
