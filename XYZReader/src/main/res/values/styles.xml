@@ -28,11 +28,5 @@
 
     </style>
 
-    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
-        <!--<item name="colorPrimary">@color/Primary</item>-->
-        <!--<item name="colorPrimaryDark">@color/Primary_dark</item>-->
-        <!--<item name="colorAccent">@color/Color_accent</item>-->
-
-    <!--</style>-->
 
 </resources>
